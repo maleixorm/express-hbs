@@ -1,0 +1,26 @@
+{
+  "name": "express-hbs",
+  "version": "1.0.0",
+  "description": "Projeto em node.js, com express, handlebars e nodemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maleixorm/express-hbs.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "express",
+    "handlebars",
+    "nodemon"
+  ],
+  "author": "Marcos Aleixo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maleixorm/express-hbs/issues"
+  },
+  "homepage": "https://github.com/maleixorm/express-hbs#readme"
+}
