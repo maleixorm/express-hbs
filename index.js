@@ -8,51 +8,36 @@ app.set('views', './views');
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    const users = [
-        {
-            name: "Marcos",
-            lastname: "Marques",
-            email: "contato@marcosaleixo.com.br"
-        },
-        {
-            name: "John",
-            lastname: "Connor",
-            email: "contato@marcosaleixo.com.br"
-        },
-        {
-            name: "Sarah",
-            lastname: "Connor",
-            email: "contato@marcosaleixo.com.br"
-        },
-    ]
+const produtos = [
+    {
+        id: 1,
+        nome: "Os segredos da mente milionária",
+        autor: "T. Harv Ecker",
+        categoria: "Empreendedorismo"
+    },
+    {
+        id:2,
+        nome: "Pai Rico, Pai Pobre",
+        autor: "Robert Kyosaki",
+        categoria: "Empreendedorismo"
+    },
+    {
+        id:3,
+        nome: "Aprendendo JavaScript",
+        autor: "Shelley Powers",
+        categoria: "Programação"
+    },
+]
 
-    res.render('home', { users });
+app.get('/produto/:id', (req, res)=> {
+    const id = req.params.id;
+    const produto = produtos[parseInt(id) - 1];
+
+    res.render('produto', { produto });
 });
 
-app.get('/blog', (req, res)=> {
-    const posts = [
-        {
-            title: "Aprender Node.JS",
-            category: "Programação",
-            body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, dolores expedita.",
-            comments: 4
-        },
-        {
-            title: "Aprender PHP",
-            category: "Programação",
-            body: "Lorem ipsum dolor sit amet consectetur.",
-            comments: 7
-        },
-        {
-            title: "Aprender Java",
-            category: "Programação",
-            body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-            comments: 43
-        }
-    ]
-
-    res.render('blog', { posts });
+app.get('/', (req, res) => {
+    res.render('home', { produtos });
 });
 
 app.listen(3000, () => {
