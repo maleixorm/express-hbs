@@ -1,7 +1,7 @@
-<h1>Usuários</h1>
-{{#with users}}
+<h1>Produtos</h1>
+{{#each produtos}}
     <div>
-        <h2>{{name}}</h2>
-        <a href="/user/{{name}}"></a>
+        <h3>{{nome}}</h3>
+        <a href="/produto/{{this.id}}">Saiba Mais</a>
     </div>
-{{/with}}
+{{/each}}
