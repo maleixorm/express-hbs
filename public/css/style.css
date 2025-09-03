@@ -1,4 +1,14 @@
 body {
     background-color: black;
     color: white;
+    padding: 30px;
+}
+
+a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+h1 {
+    color: blueviolet;
 }
